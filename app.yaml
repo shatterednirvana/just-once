@@ -12,10 +12,7 @@ handlers:
   static_files: public/index.html
   upload: public/index.html
 
-- url: /download/(.+)
-  script: justonce.app
-
-- url: /upload/(.+)
+- url: /(.+)
   script: justonce.app
 
 libraries:

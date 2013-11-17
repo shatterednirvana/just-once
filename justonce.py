@@ -29,7 +29,7 @@ class OneTimeFile(ndb.Model):
   contents = ndb.BlobProperty()
 
 
-class DownloadPage(webapp2.RequestHandler):
+class MainPage(webapp2.RequestHandler):
 
 
   def get(self, name):
@@ -41,9 +41,6 @@ class DownloadPage(webapp2.RequestHandler):
       self.error(404)
 
 
-class UploadPage(webapp2.RequestHandler):
-
-
   def post(self, name):
     one_time_file = OneTimeFile(id = name)
     one_time_file.contents = self.request.body
@@ -52,6 +49,5 @@ class UploadPage(webapp2.RequestHandler):
 
 # Start up our app
 app = webapp2.WSGIApplication([
-  ('/download/(.+)', DownloadPage),
-  ('/upload/(.+)', UploadPage),
+  ('/(.+)', MainPage),
 ], debug=True)
