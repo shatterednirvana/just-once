@@ -1,4 +1,4 @@
-# Programmer: Chris Bunch (chris@appscale.com)
+# Programmer: Chris Bunch (shatterednirvana@gmail.com)
 
 
 from google.appengine.ext import ndb
