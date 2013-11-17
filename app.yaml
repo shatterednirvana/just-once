@@ -17,7 +17,7 @@ handlers:
 - url: /download/(.+)
   script: justonce.app
 
-- url: /upload
+- url: /upload/(.+)
   script: justonce.app
 
 libraries:
