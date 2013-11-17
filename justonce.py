@@ -1,21 +1,8 @@
 # Programmer: Chris Bunch (chris@appscale.com)
 
 
-# General purpose library imports
-import jinja2
-import os
-import re
-import urllib
-import webapp2
-
-
-# Google App Engine Datastore-related imports
 from google.appengine.ext import ndb
-
-
-# Set up Jinja to read template files for our app
-jinja_environment = jinja2.Environment(
-  loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
+import webapp2
 
 
 class OneTimeFile(ndb.Model):
