@@ -32,8 +32,8 @@ class OneTimeFile(ndb.Model):
 class DownloadPage(webapp2.RequestHandler):
 
 
-  def get(self, app_id):
-    one_time_file = OneTimeFile.get_by_id(app_id)
+  def get(self, name):
+    one_time_file = OneTimeFile.get_by_id(name)
     if one_time_file:
       self.response.out.write(one_time_file.contents)
       one_time_file.key.delete()
@@ -44,9 +44,9 @@ class DownloadPage(webapp2.RequestHandler):
 class UploadPage(webapp2.RequestHandler):
 
 
-  def post(self, app_id):
-    one_time_file = OneTimeFile.get_by_id(app_id)
-    one_time_file.contents = XXX
+  def post(self, name):
+    one_time_file = OneTimeFile(id = name)
+    one_time_file.contents = self.request.body
     one_time_file.put()
 
 
