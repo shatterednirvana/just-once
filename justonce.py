@@ -55,7 +55,12 @@ class MainPage(webapp2.RequestHandler):
       body: The request body, which will be stored for later retrieval.
     """
     one_time_file = OneTimeFile(id = name)
-    one_time_file.contents = self.request.body
+    body = self.request.body
+    if 'body-ui' in self.request.POST.multi:
+      one_time_file.contents = self.request.POST.multi['body-ui'].file.getvalue()
+    else:
+      one_time_file.contents = body
+
     one_time_file.put()
 
 
