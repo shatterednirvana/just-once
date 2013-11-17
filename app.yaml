@@ -9,8 +9,8 @@ handlers:
   static_dir: static
 
 - url: /
-  static_files: public/index.html
-  upload: public/index.html
+  static_files: static/index.html
+  upload: static/index.html
 
 - url: /(.+)
   script: justonce.app
