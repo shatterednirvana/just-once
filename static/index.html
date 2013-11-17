@@ -51,18 +51,22 @@
 
 
       <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+        <h1>JustOnce: Share files that can only be downloaded a single time.</h1>
+        <p class="lead">Use this web interface to demonstrate how the RESTful interface works.<br> All you need to say is what you want to upload and what URL it should be accessible from.</p>
         <form action="/{{fileName}}" method="POST" enctype="multipart/form-data">
-          <label>Name:</label>
-          <input type="text" ng-model="fileName" placeholder="Enter a name here">
+          <label>URL Suffix:</label>
+          <input type="text" ng-model="fileName" placeholder="Enter a suffix here">
           <br />
           <br />
           <label>File:</label>
           <center><input type="file" name="body-ui"></center>
+          <br />
+          <br />
           <button type="submit" class="btn btn-primary btn-large">
             Upload &raquo;
           </button>
+          <br />
+          <br />
           <h1>Your file will be available for one download at <a href="/{{fileName}}">/{{fileName}}</a></h1>
         </form>
       </div>
@@ -72,6 +76,6 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+    <script src="/static/angular.min.js"></script>
   </body>
 </html>
